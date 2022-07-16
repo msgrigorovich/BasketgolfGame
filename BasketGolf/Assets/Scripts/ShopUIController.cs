@@ -6,6 +6,7 @@ public class ShopUIController : MonoBehaviour
 {
     public GameObject shopCanvas;
     public GameObject mainCanvas;
+    public GameObject buttonHolder;
 
     public void ButtonClose() {
         if (shopCanvas.activeInHierarchy)
@@ -16,6 +17,16 @@ public class ShopUIController : MonoBehaviour
         else {
             shopCanvas.SetActive(true);
             mainCanvas.SetActive(false);
+        }
+    }
+
+    public void SettingsOpener() {
+        if (buttonHolder.activeInHierarchy)
+        {
+            buttonHolder.SetActive(false);
+        }
+        else {
+            buttonHolder.SetActive(true);
         }
     }
 }
