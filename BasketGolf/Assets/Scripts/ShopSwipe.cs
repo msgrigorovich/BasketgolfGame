@@ -5,6 +5,9 @@ using UnityEngine.EventSystems;
 
 public class ShopSwipe : MonoBehaviour, IDragHandler, IEndDragHandler
 {
+
+    public GameObject[] dots;
+
     private Vector3 panelLocation;
     public float percentThreshold = 0.2f;
     public float easing = 0.5f;
@@ -43,6 +46,26 @@ public class ShopSwipe : MonoBehaviour, IDragHandler, IEndDragHandler
         else
         {
             StartCoroutine(SmoothMove(transform.position, panelLocation, easing));
+        }
+        switch (currentPage)
+        {
+            case 1:
+                dots[0].SetActive(true);
+                dots[1].SetActive(false);
+                dots[2].SetActive(false);
+                break;
+            case 2:
+                dots[0].SetActive(false);
+                dots[1].SetActive(true);
+                dots[2].SetActive(false);
+                break;
+            case 3:
+                dots[0].SetActive(false);
+                dots[1].SetActive(false);
+                dots[2].SetActive(true);
+                break;
+            default:
+                break;
         }
     }
     IEnumerator SmoothMove(Vector3 startpos, Vector3 endpos, float seconds)

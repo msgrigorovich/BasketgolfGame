@@ -1,9 +1,14 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopUIController : MonoBehaviour
 {
+    public float timeRemaining = 3600;
+    public bool timerIsRunning = false;
+    public Text timeText;
 
     public GameObject rewardActive;
     public GameObject rewardDisable;
@@ -13,9 +18,35 @@ public class ShopUIController : MonoBehaviour
     public GameObject buttonHolder;
     public GameObject bonusCanvas;
 
-    private int RewardTime;
-    private bool Reward=true;
+    private int rewardTime;
+    private bool reward=true;
 
+
+    void Update()
+    {
+        if (timerIsRunning)
+        {
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+                DisplayTime(timeRemaining);
+            }
+            else
+            {
+                timeRemaining = 0;
+                timerIsRunning = false;
+                RewardIsReady();
+            }
+        }
+    }
+
+    void DisplayTime(float timeToDisplay)
+    {
+        timeToDisplay += 1;
+        float minutes = Mathf.FloorToInt(timeToDisplay / 60);
+        float seconds = Mathf.FloorToInt(timeToDisplay % 60);
+        timeText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+    }
 
     public void ButtonClose() {
         if (shopCanvas.activeInHierarchy)
@@ -39,21 +70,28 @@ public class ShopUIController : MonoBehaviour
         }
     }
 
+    //---------------------------------------------------reward
     public void RewardTake()
     {
         rewardActive.SetActive(false);
         rewardDisable.SetActive(true);
         bonusCanvas.SetActive(false);
-        Reward = false;
-        RewardTime = 3600;
+        reward = false;
+        timeRemaining = 10;
+        timerIsRunning = true;
     }
 
     public void TakeRewardButton()
     {
-        if (Reward)
+        if (reward)
         {
             bonusCanvas.SetActive(true);
         }
         else return;
+    }
+    public void RewardIsReady() {
+        rewardDisable.SetActive(false);
+        rewardActive.SetActive(true);
+        reward = true;
     }
 }
