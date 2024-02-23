@@ -5,6 +5,8 @@
 
 I am developing this project with my colleague/friend ([Ilya Dementeev](https://github.com/elyasn0)). It was supposed to be a kind of casual game that we will develop in one weekend but, it's scary to admit, this project has already taken at least 3 months. But we will finish it!
 
+_P.S.: ..taken at least 2 years :)_
+
 The essence of the game is to shoot a ball into a basketball hoop, but using golf mechanics. Do you understand, Basket + Golf? <u><b>Basketgolf!</b></u>
 
 <p align = "center">
