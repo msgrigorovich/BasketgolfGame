@@ -28,7 +28,7 @@ Looks something like this:
 <p align = "center">
 <i>I know it's still too boring!</i>
 
-In the future we plan to create more interesting levels and develop a small narrative. But for now, that's all for now!
+In the future we plan to create more interesting levels and develop a small narrative. But for now, that's all!
 ___
 
 <p
