@@ -19,7 +19,9 @@ In the test scene we also added a counter to avoid boredom:
 * hits. 
 
 Looks something like this:
-![BasketgolfGame.gif](https://github.com/msgrigorovich/BasketgolfGame/blob/main/README_PICTURES/BasketgoldGame.gif?raw=true)
+<p align = "center">
+<img width="375" height="230" src="https://github.com/msgrigorovich/BasketgolfGame/blob/main/README_PICTURES/BasketgoldGame.gif?raw=true">
+</p>
 
 <p align = "center">
 <i>I know it's still too boring!</i>
